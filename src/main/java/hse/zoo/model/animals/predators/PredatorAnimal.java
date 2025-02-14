@@ -7,7 +7,7 @@ import hse.zoo.model.data.PredatorData;
  * An animal that is a predator.
  */
 public abstract class PredatorAnimal extends Animal implements Predator {
-  private final int attackPower;
+  protected final int attackPower;
 
   /**
    * Constructor for the PredatorAnimal class.
@@ -15,8 +15,8 @@ public abstract class PredatorAnimal extends Animal implements Predator {
    * @param predatorData The data for the predator animal.
    */
   public PredatorAnimal(PredatorData predatorData) {
-    super(predatorData.animalData());
-    this.attackPower = predatorData.attackPower();
+    super(predatorData.getAnimalData());
+    this.attackPower = predatorData.getAttackPower();
   }
 
   @Override

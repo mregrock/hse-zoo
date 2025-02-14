@@ -1,7 +1,6 @@
 package hse.zoo.model.animals.herbivores;
 
 import hse.zoo.model.animals.Animal;
-import hse.zoo.model.animals.herbivores.Herbivorous;
 import hse.zoo.model.data.HerbivorousData;
 
 /**
@@ -16,8 +15,8 @@ public abstract class HerbivorousAnimal extends Animal implements Herbivorous {
    * @param herbivorousData The data for the herbivorous animal.
    */
   public HerbivorousAnimal(HerbivorousData herbivorousData) {
-    super(herbivorousData.animalData());
-    this.kindnessAmount = herbivorousData.kindnessAmount();
+    super(herbivorousData.getAnimalData());
+    this.kindnessAmount = herbivorousData.getKindnessAmount();
   }
 
   @Override

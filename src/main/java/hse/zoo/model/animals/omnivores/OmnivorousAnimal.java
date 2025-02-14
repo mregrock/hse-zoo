@@ -1,7 +1,6 @@
 package hse.zoo.model.animals.omnivores;
 
 import hse.zoo.model.animals.Animal;
-import hse.zoo.model.data.AnimalData;
 import hse.zoo.model.data.OmnivorousData;
 
 /**
@@ -9,8 +8,8 @@ import hse.zoo.model.data.OmnivorousData;
  *
  */
 public abstract class OmnivorousAnimal extends Animal implements Omnivorous {
-  private final int kindnessAmount;
-  private final int attackPower;
+  protected final int kindnessAmount;
+  protected final int attackPower;
 
   /**
    * Constructor for the OmnivorousAnimal class.
@@ -18,9 +17,9 @@ public abstract class OmnivorousAnimal extends Animal implements Omnivorous {
    * @param omnivorousData The data for the omnivorous animal.
    */
   public OmnivorousAnimal(OmnivorousData omnivorousData) {
-    super(omnivorousData.animalData());
-    this.kindnessAmount = omnivorousData.kindnessAmount();
-    this.attackPower = omnivorousData.attackPower();
+    super(omnivorousData.getAnimalData());
+    this.kindnessAmount = omnivorousData.getKindnessAmount();
+    this.attackPower = omnivorousData.getAttackPower();
   }
 
   @Override

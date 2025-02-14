@@ -7,8 +7,8 @@ import hse.zoo.model.data.InventoryItemData;
  * Class for all inventory items in the zoo.
  */
 public abstract class InventoryItem implements Inventory {
-  private final String name;
-  private final int id;
+  protected final String name;
+  protected final int id;
 
   /**
    * Constructor for the InventoryItem class.
@@ -16,8 +16,8 @@ public abstract class InventoryItem implements Inventory {
    * @param inventoryItemData The data for the inventory item.
    */
   public InventoryItem(InventoryItemData inventoryItemData) {
-    this.id = inventoryItemData.id();
-    this.name = inventoryItemData.name();
+    this.id = inventoryItemData.getId();
+    this.name = inventoryItemData.getName();
   }
 
   /**

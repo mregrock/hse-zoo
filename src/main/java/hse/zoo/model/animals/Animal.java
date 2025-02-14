@@ -8,7 +8,8 @@ import hse.zoo.model.data.AnimalData;
  * Class for all animals in the zoo.
  */
 public abstract class Animal extends InventoryItem implements Alive {
-  private final int foodConsumption;
+  protected final int foodConsumption;
+  protected final int health;
 
   /**
    * Constructor for the Animal class.
@@ -16,8 +17,9 @@ public abstract class Animal extends InventoryItem implements Alive {
    * @param animalData The data for the animal.
    */
   public Animal(AnimalData animalData) {
-    super(animalData.inventoryItemData());
-    this.foodConsumption = animalData.foodConsumption();
+    super(animalData.getInventoryItemData());
+    this.foodConsumption = animalData.getFoodConsumption();
+    this.health = animalData.getHealth();
   }
 
   /**
@@ -27,5 +29,14 @@ public abstract class Animal extends InventoryItem implements Alive {
    */
   public int getFoodConsumption() {
     return foodConsumption;
+  }
+
+  /**
+   * Get the health of the animal.
+   *
+   * @return The health of the animal.
+   */
+  public int getHealth() {
+    return health;
   }
 }
